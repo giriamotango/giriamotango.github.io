@@ -1,493 +1,250 @@
 <!doctype html>
 <html lang="it">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Giriamo Tango — Scuola di Tango Argentino</title>
-  <meta name="description" content="Giriamo Tango: scuola di tango argentino. Corsi settimanali, lezioni private, milonghe ed eventi in Italia." />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Giriamo Tango — Scuola di Tango Argentino</title>
 
-  <style>
-    :root{
-      /* Vintage chiaro (carta + oro + bordeaux) */
-      --paper:#fbf3e6;
-      --paper2:#f6ead6;
-      --ink:#1b1a18;
-      --muted:#5c564c;
+<style>
+:root{
+--paper:#fbf3e6;
+--paper2:#f6ead6;
+--ink:#1b1a18;
+--muted:#5c564c;
+--gold:#b08a2e;
+--wine:#7b1f2b;
+--line:rgba(27,26,24,.14);
+--card:rgba(255,255,255,.78);
+--shadow:0 18px 50px rgba(27,26,24,.12);
+--radius:18px;
+--max:1120px;
+--pad:22px;
+}
 
-      --gold:#b08a2e;
-      --wine:#7b1f2b;
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial;
+color:var(--ink);
+background:
+radial-gradient(900px 520px at 16% 8%, rgba(123,31,43,.12), transparent 60%),
+radial-gradient(900px 520px at 86% 10%, rgba(176,138,46,.14), transparent 60%),
+linear-gradient(180deg,var(--paper),var(--paper2));
+}
 
-      --line:rgba(27,26,24,.14);
-      --card:rgba(255,255,255,.72);
-      --shadow: 0 18px 50px rgba(27,26,24,.12);
-      --radius: 18px;
+.wrap{max-width:var(--max);margin:auto;padding:18px var(--pad) 70px}
 
-      --max: 1120px;
-      --pad: 22px;
-    }
+.nav{
+display:flex;justify-content:space-between;align-items:center;
+padding:14px 0;
+background:rgba(251,243,230,.9);
+border-bottom:1px solid var(--line);
+position:sticky;top:0;
+}
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color:var(--ink);
-      line-height:1.55;
-      background:
-        radial-gradient(900px 520px at 16% 8%, rgba(123,31,43,.12), transparent 60%),
-        radial-gradient(900px 520px at 86% 10%, rgba(176,138,46,.14), transparent 60%),
-        linear-gradient(180deg, var(--paper), var(--paper2));
-    }
+.brand{display:flex;align-items:center;gap:12px}
 
-    a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:18px var(--pad) 70px}
+.logo{
+width:56px;height:56px;border-radius:16px;overflow:hidden;
+border:1px solid var(--line);
+background:#fff;
+}
+.logo img{width:100%;height:100%;object-fit:cover}
 
-    /* NAV */
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
-      position:sticky; top:0; z-index:10;
-      background: rgba(251,243,230,.86);
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid var(--line);
-    }
-    .brand{display:flex; align-items:center; gap:12px; text-decoration:none}
-    .logo{
-      width:54px; height:54px; border-radius:16px; overflow:hidden;
-      border:1px solid var(--line);
-      background: linear-gradient(135deg, rgba(176,138,46,.18), rgba(123,31,43,.12));
-      box-shadow: 0 10px 26px rgba(27,26,24,.10);
-      display:grid; place-items:center;
-    }
-    .logo img<div class="logo">
-    <img src="logotipo.jpeg" alt="Logo Giriamo Tango">
-</div>{width:100%; height:100%; object-fit:cover; display:block}
-    .brand b{letter-spacing:.2px; font-size:1.05rem}
-    .brand small{display:block; color:var(--muted); margin-top:-2px}
+.menu{display:flex;gap:16px}
+.menu a{text-decoration:none;color:var(--muted);font-weight:600}
 
-    .menu{display:flex; gap:14px; align-items:center}
-    .menu a{
-      text-decoration:none; color:var(--muted);
-      padding:10px 10px; border-radius:12px;
-      font-weight:650;
-    }
-    .menu a:hover{background:rgba(27,26,24,.06); color:var(--ink)}
+.cta{
+background:linear-gradient(135deg,var(--gold),var(--wine));
+color:white;padding:10px 14px;border-radius:14px;
+text-decoration:none;font-weight:700;
+}
 
-    .cta{
-      display:inline-flex; align-items:center; gap:10px;
-      background: linear-gradient(135deg, rgba(176,138,46,.98), rgba(123,31,43,.92));
-      color: #fff;
-      font-weight:850;
-      padding:10px 14px; border-radius:14px;
-      text-decoration:none;
-      box-shadow: 0 14px 36px rgba(123,31,43,.18);
-      border:1px solid rgba(255,255,255,.18);
-    }
+.hero{padding:32px 0}
+h1{margin:0;font-size:2.4rem}
 
-    /* HERO */
-    .hero{padding:34px 0 16px; display:grid; gap:16px}
-    .kicker{
-      color:var(--muted);
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      font-size:.78rem
-    }
-    h1{
-      margin:0;
-      font-size: clamp(2.05rem, 3.2vw, 3.25rem);
-      line-height:1.08;
-      letter-spacing:-.02em;
-    }
-    .lead{
-      max-width:78ch;
-      color: rgba(27,26,24,.82);
-      font-size: 1.05rem;
-      margin:0;
-    }
+.grid{display:grid;gap:14px;grid-template-columns:repeat(12,1fr)}
+.card{
+background:var(--card);
+border:1px solid var(--line);
+border-radius:var(--radius);
+padding:18px;
+box-shadow:var(--shadow);
+}
+.span12{grid-column:span 12}
+.span6{grid-column:span 6}
 
-    .actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:6px}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:12px 14px; border-radius:14px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.58);
-      text-decoration:none;
-      color:var(--ink);
-      font-weight:800;
-    }
-    .btn:hover{background: rgba(255,255,255,.82)}
-    .btn.secondary{color:var(--muted); font-weight:700}
-    .btn.strong{
-      background: linear-gradient(135deg, rgba(176,138,46,.98), rgba(123,31,43,.92));
-      color:#fff; border:1px solid rgba(255,255,255,.20);
-    }
+.poster{
+width:100%;
+border-radius:14px;
+margin-top:10px;
+}
 
-    /* GRID / CARDS */
-    .grid{display:grid; gap:14px; grid-template-columns:repeat(12,1fr); margin-top:16px}
-    .card{
-      background: var(--card);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:18px;
-    }
-    .card h3{margin:0 0 8px; letter-spacing:-.01em}
-    .card p{margin:0; color:var(--muted)}
-    .span4{grid-column:span 4}
-    .span6{grid-column:span 6}
-    .span8{grid-column:span 8}
-    .span12{grid-column:span 12}
+.section{margin-top:32px}
 
-    /* SECTIONS */
-    .section{margin-top:26px}
-    .titleRow{
-      display:flex; align-items:flex-end; justify-content:space-between;
-      gap:16px; margin-bottom:12px;
-    }
-    .titleRow h2{margin:0; letter-spacing:-.02em}
-    .titleRow span{color:var(--muted)}
+.btn{
+display:inline-block;
+margin-top:10px;
+padding:10px 14px;
+border-radius:12px;
+border:1px solid var(--line);
+text-decoration:none;
+color:var(--ink);
+font-weight:600;
+background:white;
+}
+.btn.primary{
+background:linear-gradient(135deg,var(--gold),var(--wine));
+color:white;
+border:none;
+}
 
-    /* EVENT BANNERS */
-    .event{
-      background: linear-gradient(180deg, rgba(255,255,255,.72), rgba(255,255,255,.60));
-      border:1px solid rgba(123,31,43,.22);
-      position:relative;
-      overflow:hidden;
-    }
-    .event::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background: radial-gradient(800px 300px at 20% 0%, rgba(123,31,43,.12), transparent 55%),
-                  radial-gradient(800px 300px at 90% 30%, rgba(176,138,46,.18), transparent 55%);
-      pointer-events:none;
-    }
-    .eventInner{
-      position:relative;
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap:16px;
-      align-items:center;
-    }
-    .badge{
-      display:inline-flex;
-      gap:8px; align-items:center;
-      padding:8px 10px;
-      border-radius:999px;
-      background: rgba(255,255,255,.70);
-      border:1px solid var(--line);
-      font-weight:850;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      font-size:.72rem;
-      color: rgba(27,26,24,.85);
-    }
-    .eventTitle{
-      margin:10px 0 6px;
-      font-size: clamp(1.35rem, 2.2vw, 2.05rem);
-      line-height:1.12;
-      letter-spacing:-.02em;
-    }
-    .eventMeta{
-      color: rgba(27,26,24,.78);
-      margin:0;
-    }
-    .eventList{
-      margin:10px 0 0;
-      padding-left:18px;
-      color: rgba(27,26,24,.78);
-    }
-    .eventCtas{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px}
+.footer{
+margin-top:40px;
+border-top:1px solid var(--line);
+padding-top:16px;
+color:var(--muted);
+}
 
-    .poster{
-      width:100%;
-      border-radius:16px;
-      border:1px solid rgba(27,26,24,.16);
-      box-shadow: 0 18px 44px rgba(27,26,24,.12);
-      background:#fff;
-    }
-
-    /* Courses list */
-    .list{display:grid; gap:10px; margin:0; padding:0; list-style:none}
-    .item{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.58);
-      border-radius:16px;
-      padding:14px;
-      display:flex; gap:12px; align-items:flex-start;
-    }
-    .dot{
-      width:10px; height:10px; border-radius:50%;
-      margin-top:7px; flex:0 0 auto;
-      background: linear-gradient(135deg, var(--gold), var(--wine));
-      box-shadow: 0 6px 16px rgba(27,26,24,.12);
-    }
-    .item b{display:block}
-    .item small{color:var(--muted)}
-
-    /* Contacts */
-    .contacts a{
-      text-decoration:none;
-      border-bottom:1px dotted rgba(27,26,24,.35);
-    }
-    .contacts a:hover{border-bottom-color: rgba(27,26,24,.75)}
-
-    /* Footer */
-    .footer{
-      margin-top:34px;
-      padding-top:18px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      display:flex; gap:10px; flex-wrap:wrap;
-      align-items:center; justify-content:space-between;
-    }
-
-    @media (max-width: 920px){
-      .menu{display:none}
-      .span4,.span6,.span8{grid-column:span 12}
-      .eventInner{grid-template-columns:1fr}
-    }
-  </style>
+@media(max-width:900px){
+.grid{grid-template-columns:1fr}
+}
+</style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="nav">
-      <a class="brand" href="#top" aria-label="Giriamo Tango">
-        <div class="logo">
-          <img src="logotipo.jpeg" alt="Logo Giriamo Tango"
-               onerror="this.remove(); this.parentElement.textContent='GT'; this.parentElement.style.fontWeight='900'; this.parentElement.style.color='rgba(27,26,24,.9)';" />
-        </div>
-        <div>
-          <b>Giriamo Tango</b>
-          <small>Scuola di Tango Argentino</small>
-        </div>
-      </a>
 
-      <div class="menu">
-        <a href="#eventi">Eventi</a>
-        <a href="#corsi">Corsi</a>
-        <a href="#workshop">Workshop</a>
-        <a href="#contatti">Contatti</a>
-      </div>
+<div class="wrap">
 
-      <a class="cta" href="https://wa.me/393314117233" target="_blank" rel="noopener">WhatsApp • Info</a>
-    </div>
+<!-- NAV -->
+<div class="nav">
+<div class="brand">
+<div class="logo">
+<img src="logo.jpeg" alt="Logo Giriamo Tango">
+</div>
+<div>
+<b>Giriamo Tango</b><br>
+<small>Scuola di Tango Argentino</small>
+</div>
+</div>
 
-    <main id="top">
-      <section class="hero">
-        <div class="kicker">Tango argentino • Italia</div>
-        <h1>Eleganza, musicalità e connessione.</h1>
-        <p class="lead">
-          Giriamo Tango è una scuola di tango argentino guidata da insegnanti argentini con oltre 25 anni nel tango.
-          Organizziamo corsi settimanali, lezioni private, workshop ed eventi in diverse località d’Italia.
-        </p>
+<div class="menu">
+<a href="#eventi">Eventi</a>
+<a href="#corsi">Corsi</a>
+<a href="#workshop">Workshop</a>
+<a href="#contatti">Contatti</a>
+</div>
 
-        <div class="actions">
-          <a class="btn strong" href="#eventi">Vedi eventi in evidenza</a>
-          <a class="btn" href="#corsi">Orari corsi</a>
-          <a class="btn secondary" href="#contatti">Contatti</a>
-        </div>
+<a class="cta" href="https://wa.me/393314117233">WhatsApp</a>
+</div>
 
-        <div class="grid">
-          <div class="card span4">
-            <h3>Corsi settimanali</h3>
-            <p>Lezioni strutturate + pratica, con iscrizione in coppia o anche da soli.</p>
-          </div>
-          <div class="card span4">
-            <h3>Lezioni private</h3>
-            <p>Percorsi su misura: tecnica, qualità del movimento, musicalità e stile.</p>
-          </div>
-          <div class="card span4">
-            <h3>Eventi & milonghe</h3>
-            <p>Appuntamenti speciali per vivere il tango in modo autentico.</p>
-          </div>
-        </div>
-      </section>
+<!-- HERO -->
+<section class="hero">
+<h1>Eleganza, musicalità e connessione.</h1>
+<p>
+Giriamo Tango è una scuola di tango argentino guidata da insegnanti argentini con oltre 25 anni nel tango.
+Corsi, workshop ed eventi in diverse località d’Italia.
+</p>
+</section>
 
-      <!-- EVENTI IN EVIDENZA -->
-      <section class="section" id="eventi">
-        <div class="titleRow">
-          <h2>Eventi in evidenza</h2>
-          <span>Prenotazioni via WhatsApp</span>
-        </div>
+<!-- EVENTI -->
+<section class="section" id="eventi">
 
-        <!-- MILONGA (principale) -->
-        <div class="card event">
-          <div class="eventInner">
-            <div>
-              <div class="badge">In evidenza • Milonga</div>
-              <div class="eventTitle">Milonga di Buenos Aires • 100% Argentina</div>
-              <p class="eventMeta">
-                <b>Sabato 14 Marzo 2026</b> • <b>20:00 – 24:00</b><br/>
-                <b>San Giorgio al Tagliamento</b> (San Michele al Tagliamento, Venezia • Veneto)
-              </p>
+<div class="grid">
 
-              <ul class="eventList">
-                <li><b>DJ:</b> María Fernanda Ochoa <i>“La Pebeta”</i></li>
-                <li>Atmosfera argentina, musica selezionata e pista pronta a brillare</li>
-                <li><b>Info e prenotazioni:</b> +39 331 411 7233</li>
-              </ul>
+<!-- MILONGA PRINCIPALE -->
+<div class="card span12">
+<h2>Milonga di Buenos Aires — 14 Marzo 2026</h2>
+<p>
+📍 San Giorgio al Tagliamento (Venezia, Veneto)<br>
+🕗 20:00 – 24:00<br>
+🎧 DJ María Fernanda Ochoa “La Pebeta”
+</p>
 
-              <div class="eventCtas"> <a class="btn" href="milonga.ics">Aggiungi (Apple/Outlook)</a>
-<a class="btn" target="_blank" rel="noopener"
-   href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Milonga%20di%20Buenos%20Aires%20100%25%20Argentina%20(DJ%3A%20Mar%C3%ADa%20Fernanda%20Ochoa%20%E2%80%9CLa%20Pebeta%E2%80%9D)&dates=20260314T190000Z/20260314T230000Z&location=San%20Giorgio%20al%20Tagliamento%20(San%20Michele%20al%20Tagliamento%2C%20VE)%2C%20Italia&details=Orario%3A%2020%3A00%E2%80%9324%3A00.%20Info%2FPrenotazioni%20WhatsApp%3A%20%2B39%20331%20411%207233">
-  Aggiungi (Google)
-</a>
-                <a class="btn strong" href="https://wa.me/393314117233" target="_blank" rel="noopener">Prenota su WhatsApp</a>
-                <a class="btn" href="#contatti">Contatti</a>
-              </div>
-            </div>
+<img class="poster" src="milonga14.jpeg" alt="Milonga">
 
-            <div>
-              <img class="poster" src="milonga14.jpeg" alt="Locandina Milonga 14 Marzo 2026">
-            </div>
-          </div>
-        </div>
+<a class="btn primary" href="https://wa.me/393314117233">Prenota</a>
+</div>
 
-        <!-- WORKSHOP (molto in evidenza) -->
-        <div class="card event" style="margin-top:14px">
-          <div class="eventInner">
-            <div>
-              <div class="badge">In evidenza • Workshop</div>
-              <div class="eventTitle">Tango Workshop Experience con Jonatan Agüero</div>
-              <p class="eventMeta">
-                <b>2–3 Maggio 2026</b> • <b>Lignano Sabbiadoro</b> (Udine • Friuli-Venezia Giulia)
-              </p>
+<!-- WORKSHOP DESTACADO -->
+<div class="card span12">
+<h2>Workshop con Jonatan Agüero — 2–3 Maggio 2026</h2>
 
-              <ul class="eventList">
-                <li><b>Seminario di:</b> Tango • Milonga • Vals</li>
-                <li><b>Argomenti:</b> struttura e qualità del movimento, interpretazione e stile</li>
-                <li><b>Per tutti i livelli</b> • lavoro personalizzato</li>
-                <li><b>Sabato sera:</b> Milonga con la partecipazione del Maestro Jonatan Agüero</li>
-                <li><b>Iscrizioni:</b> in coppia o singoli</li>
-              </ul>
+<p>
+📍 Lignano Sabbiadoro (Udine)<br>
+Tango • Milonga • Vals<br>
+Per tutti i livelli — iscrizione in coppia o singoli<br>
+Milonga del sabato con il Maestro
+</p>
 
-              <div class="eventCtas"><a class="btn" href="workshop-jona.ics">Aggiungi (Apple/Outlook)</a>
-<a class="btn" target="_blank" rel="noopener"
-   href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Tango%20Workshop%20Experience%20con%20Jonatan%20Ag%C3%BCero&dates=20260502T080000Z/20260503T170000Z&location=Lignano%20Sabbiadoro%20(UD)%2C%20Italia&details=2%E2%80%933%20Maggio%202026.%20Tango%20%E2%80%A2%20Milonga%20%E2%80%A2%20Vals.%20Info%20WhatsApp%3A%20%2B39%20331%20411%207233">
-  Aggiungi (Google)
-</a>
-                <a class="btn strong" href="https://wa.me/393314117233" target="_blank" rel="noopener">Iscriviti / Info</a>
-                <a class="btn" href="#workshop">Dettagli workshop</a>
-              </div>
-            </div>
+<img class="poster" src="workshpjona.jpeg" alt="Workshop">
 
-            <div>
-              <img class="poster" src="workshpjona.jpeg" alt="Locandina Workshop Jonatan Agüero 2-3 Maggio 2026">
-            </div>
-          </div>
-        </div>
-      </section>
+<a class="btn primary" href="https://wa.me/393314117233">Info / Iscrizioni</a>
+</div>
 
-      <!-- CORSI -->
-      <section class="section" id="corsi">
-        <div class="titleRow">
-          <h2>Corsi</h2>
-          <span>Iscrizione in coppia o anche singoli</span>
-        </div>
+</div>
+</section>
 
-        <div class="grid">
-          <div class="card span12">
-            <h3>Orari settimanali</h3>
-            <ul class="list" style="margin-top:12px">
-              <li class="item">
-                <span class="dot"></span>
-                <div>
-                  <b>Lunedì • Pocenia • 20:00 – 21:00</b>
-                  <small>Tecnica: <b>Follower</b> + <b>Leader</b> (lavoro mirato su corpo, equilibrio e qualità del movimento).</small>
-                </div>
-              </li>
-              <li class="item">
-                <span class="dot"></span>
-                <div>
-                  <b>Lunedì • Pocenia • 21:00 – 22:30</b>
-                  <small>
-                    Corso in coppia (possibile iscriversi anche da soli).<br/>
-                    <b>Struttura:</b> 1 ora di lezione + <b>ultimi 30 min</b> di pratica guidata.
-                  </small>
-                </div>
-              </li>
-              <li class="item">
-                <span class="dot"></span>
-                <div>
-                  <b>Mercoledì • 20:00</b>
-                  <small>Corso di musicalità: <b>Tango</b> • <b>Milonga</b> • <b>Vals</b>, in coppia o singoli.</small>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+<!-- CORSI -->
+<section class="section" id="corsi">
 
-      <!-- WORKSHOP DETTAGLI -->
-      <section class="section" id="workshop">
-        <div class="titleRow">
-          <h2>Workshop</h2>
-          <span>Eventi speciali con ospiti internazionali</span>
-        </div>
+<div class="card">
+<h2>Corsi</h2>
 
-        <div class="grid">
-          <div class="card span8">
-            <h3>Jonatan Agüero • 2–3 Maggio 2026 • Lignano Sabbiadoro</h3>
-            <p>
-              Due giorni intensivi dedicati a <b>Tango • Milonga • Vals</b>, con focus su strumenti pratici per migliorare:
-              <b>struttura e qualità del movimento</b>, <b>interpretazione</b> e <b>stile</b>.
-              Percorso pensato per <b>tutti i livelli</b>, con lavoro personalizzato.
-            </p>
-            <p style="margin-top:10px; color:rgba(27,26,24,.78)">
-              <b>Sabato sera:</b> Milonga con la partecipazione del Maestro Jonatan Agüero.<br/>
-              <b>Iscrizioni:</b> in coppia o singoli.
-            </p>
-            <div class="actions" style="margin-top:12px">
-              <a class="btn strong" href="https://wa.me/393314117233" target="_blank" rel="noopener">Info / Iscrizioni WhatsApp</a>
-              <a class="btn" href="mailto:giriamotango@gmail.com">Scrivi via email</a>
-            </div>
-          </div>
+<p><b>Lunedì — Pocenia</b></p>
+<ul>
+<li>20:00–21:00 → Tecnica Leader / Follower</li>
+<li>21:00–22:30 → Corso in coppia (1h lezione + 30 min pratica)</li>
+</ul>
 
-          <div class="card span4">
-            <h3>Locandina</h3>
-            <p style="margin-bottom:10px">Puoi condividerla per promuovere l’evento.</p>
-            <img class="poster" src="workshopjona.jpeg" alt="Workshop Jonatan Agüero locandina">
-          </div>
-        </div>
-      </section>
+<p><b>Mercoledì — 20:00</b></p>
+<ul>
+<li>Musicalità Tango • Milonga • Vals (coppia o singoli)</li>
+</ul>
 
-      <!-- CONTATTI -->
-      <section class="section" id="contatti">
-        <div class="titleRow">
-          <h2>Contatti</h2>
-          <span>Info, calendario e iscrizioni</span>
-        </div>
+</div>
 
-        <div class="grid">
-          <div class="card span6 contacts">
-            <h3>Scrivici</h3>
-            <p>
-              <b>WhatsApp:</b> <a href="https://wa.me/393314117233" target="_blank" rel="noopener">+39 331 411 7233</a><br/>
-              <b>Email:</b> <a href="mailto:giriamotango@gmail.com">giriamotango@gmail.com</a><br/>
-              <b>Instagram:</b> <a href="https://instagram.com/giriamotango" target="_blank" rel="noopener">@giriamotango</a><br/>
-              <b>Facebook:</b> <a href="https://www.facebook.com/search/top?q=Giriamo%20Tango" target="_blank" rel="noopener">Giriamo Tango</a>
-            </p>
-          </div>
+</section>
 
-          <div class="card span6">
-            <h3>Dove siamo</h3>
-            <p>Attivi in diverse località d’Italia. Contattaci e ti aggiorniamo.</p>
-            <h3 style="margin-top:14px">Lingue</h3>
-            <p>Italiano / Español / English</p>
-          </div>
-        </div>
-      </section>
+<!-- WORKSHOP SECTION EXTRA -->
+<section class="section" id="workshop">
+<div class="card">
+<h2>Workshop</h2>
+<p>
+Eventi speciali con maestri internazionali.
+Il prossimo workshop sarà con Jonatan Agüero a Lignano Sabbiadoro.
+</p>
+</div>
+</section>
 
-      <div class="footer">
-        <span>© <span id="y"></span> Giriamo Tango</span>
-        <span>Vintage chiaro • oro & bordeaux</span>
-      </div>
-    </main>
-  </div>
+<!-- CONTATTI -->
+<section class="section" id="contatti">
+<div class="card">
+<h2>Contatti</h2>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+<p>
+WhatsApp: <a href="https://wa.me/393314117233">+39 331 411 7233</a><br>
+Email: <a href="mailto:giriamotango@gmail.com">giriamotango@gmail.com</a><br>
+Instagram: <a href="https://instagram.com/giriamotango">@giriamotango</a><br>
+Facebook: Giriamo Tango
+</p>
+
+<p><b>Dove siamo</b><br>
+Attivi in diverse località d’Italia. Contattaci e ti aggiorniamo.
+</p>
+
+</div>
+</section>
+
+<div class="footer">
+© <span id="y"></span> Giriamo Tango
+</div>
+
+</div>
+
+<script>
+document.getElementById("y").textContent=new Date().getFullYear();
+</script>
+
 </body>
 </html>
