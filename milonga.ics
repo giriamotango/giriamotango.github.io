@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Giriamo Tango//Eventi//IT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:milonga-20260314@giriamotango
+DTSTAMP:20260225T120000Z
+SUMMARY:Milonga di Buenos Aires 100% Argentina (DJ: María Fernanda Ochoa “La Pebeta”)
+DTSTART;TZID=Europe/Rome:20260314T200000
+DTEND;TZID=Europe/Rome:20260315T000000
+LOCATION:San Giorgio al Tagliamento (San Michele al Tagliamento, VE), Veneto, Italia
+DESCRIPTION:Milonga di Buenos Aires 100% Argentina. DJ: María Fernanda Ochoa “La Pebeta”. Orario: 20:00–24:00. Info/Prenotazioni WhatsApp: +39 331 411 7233.
+END:VEVENT
+END:VCALENDAR
