@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Giriamo Tango//Eventi//IT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:workshop-jona-20260502@giriamotango
+DTSTAMP:20260225T120000Z
+SUMMARY:Tango Workshop Experience con Jonatan Agüero (2–3 Maggio 2026)
+DTSTART;TZID=Europe/Rome:20260502T100000
+DTEND;TZID=Europe/Rome:20260503T190000
+LOCATION:Lignano Sabbiadoro (UD), Friuli-Venezia Giulia, Italia
+DESCRIPTION:Seminario di Tango • Milonga • Vals. Argomenti: struttura e qualità del movimento, interpretazione e stile. Per tutti i livelli. Iscrizioni in coppia o singoli. Info WhatsApp: +39 331 411 7233.
+END:VEVENT
+END:VCALENDAR
