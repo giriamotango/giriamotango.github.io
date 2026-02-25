@@ -1,4 +1,3 @@
-<img src="logotipo.jpeg" alt="Logo Giriamo Tango">
 <!doctype html>
 <html lang="it">
 <head>
@@ -6,81 +5,112 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Giriamo Tango — Scuola di Tango Argentino</title>
   <meta name="description" content="Giriamo Tango: scuola di tango argentino. Corsi settimanali, lezioni private e workshop in Italia e in Europa." />
+
   <style>
     :root{
-      --bg:#0b0a08;
-      --paper:#12100c;
-      --card:rgba(18,16,12,.78);
-      --text:#f3efe6;
-      --muted:#c7bfad;
-      --gold:#caa44a;
-      --wine:#7e1120;
-      --line:rgba(243,239,230,.12);
-      --shadow: 0 18px 55px rgba(0,0,0,.60);
+      /* Palette vintage chiara */
+      --paper:#fbf3e6;       /* fondo carta */
+      --paper2:#f6ead6;      /* fondo secondario */
+      --ink:#1b1a18;         /* testo */
+      --muted:#5c564c;       /* testo secondario */
+      --gold:#b08a2e;        /* oro */
+      --wine:#7b1f2b;        /* bordeaux */
+      --line:rgba(27,26,24,.14);
+      --card:rgba(255,255,255,.72);
+      --shadow: 0 18px 50px rgba(27,26,24,.12);
       --radius: 18px;
       --max: 1100px;
       --pad: 22px;
     }
+
     *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background:
-        radial-gradient(900px 520px at 18% 8%, rgba(126,17,32,.26), transparent 60%),
-        radial-gradient(900px 520px at 84% 10%, rgba(202,164,74,.22), transparent 60%),
-        linear-gradient(180deg, #070605, var(--bg));
-      color:var(--text);
+      color:var(--ink);
       line-height:1.55;
+      background:
+        radial-gradient(900px 520px at 15% 8%, rgba(123,31,43,.12), transparent 60%),
+        radial-gradient(900px 520px at 85% 10%, rgba(176,138,46,.14), transparent 60%),
+        linear-gradient(180deg, var(--paper), var(--paper2));
     }
+
     a{color:inherit}
     .wrap{max-width:var(--max); margin:0 auto; padding:18px var(--pad) 60px}
+
+    /* NAV */
     .nav{
       display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0; position:sticky; top:0; z-index:10;
+      padding:14px 0;
+      position:sticky; top:0; z-index:10;
+      background: rgba(251,243,230,.82);
       backdrop-filter: blur(10px);
-      background: rgba(11,10,8,.70);
       border-bottom:1px solid var(--line);
     }
+
     .brand{display:flex; align-items:center; gap:12px; text-decoration:none}
     .logo{
-      width:44px; height:44px; border-radius:14px; overflow:hidden;
-      background: linear-gradient(135deg, rgba(202,164,74,.40), rgba(126,17,32,.35));
+      width:46px; height:46px; border-radius:14px; overflow:hidden;
       border:1px solid var(--line);
+      background: linear-gradient(135deg, rgba(176,138,46,.18), rgba(123,31,43,.12));
+      box-shadow: 0 10px 26px rgba(27,26,24,.10);
       display:grid; place-items:center;
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
     }
     .logo img{width:100%; height:100%; object-fit:cover; display:block}
-    .brand b{letter-spacing:.4px}
+    .brand b{letter-spacing:.2px}
     .brand small{display:block; color:var(--muted); margin-top:-2px}
+
     .menu{display:flex; gap:16px; align-items:center}
-    .menu a{color:var(--muted); text-decoration:none; padding:10px 10px; border-radius:12px}
-    .menu a:hover{background:rgba(243,239,230,.06); color:var(--text)}
+    .menu a{
+      text-decoration:none; color:var(--muted);
+      padding:10px 10px; border-radius:12px;
+    }
+    .menu a:hover{background:rgba(27,26,24,.06); color:var(--ink)}
+
     .cta{
       display:inline-flex; align-items:center; gap:10px;
-      background: linear-gradient(135deg, rgba(202,164,74,.95), rgba(126,17,32,.92));
-      color:#120f0b; font-weight:800;
+      background: linear-gradient(135deg, rgba(176,138,46,.98), rgba(123,31,43,.92));
+      color: #fff;
+      font-weight:800;
       padding:10px 14px; border-radius:14px;
       text-decoration:none;
-      box-shadow: 0 16px 45px rgba(126,17,32,.25);
+      box-shadow: 0 14px 36px rgba(123,31,43,.18);
     }
 
+    /* HERO */
     .hero{padding:34px 0 18px; display:grid; gap:18px}
-    .kicker{color:var(--muted); letter-spacing:.18em; text-transform:uppercase; font-size:.78rem}
-    h1{margin:0; font-size:clamp(2.0rem, 3.4vw, 3.25rem); line-height:1.1; letter-spacing:-.02em}
-    .lead{max-width:72ch; color:rgba(243,239,230,.90); font-size:1.05rem}
-
+    .kicker{
+      color:var(--muted);
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-size:.78rem
+    }
+    h1{
+      margin:0;
+      font-size: clamp(2.05rem, 3.4vw, 3.25rem);
+      line-height:1.08;
+      letter-spacing:-.02em;
+    }
+    .lead{
+      max-width:72ch;
+      color: rgba(27,26,24,.82);
+      font-size: 1.05rem;
+    }
     .actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:6px}
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding:12px 14px; border-radius:14px;
       border:1px solid var(--line);
-      background:rgba(243,239,230,.05);
-      text-decoration:none; color:var(--text);
-      font-weight:700;
+      background: rgba(255,255,255,.55);
+      text-decoration:none;
+      color:var(--ink);
+      font-weight:750;
     }
-    .btn:hover{background:rgba(243,239,230,.08)}
+    .btn:hover{background: rgba(255,255,255,.78)}
     .btn.secondary{color:var(--muted); font-weight:650}
 
+    /* CARDS */
     .grid{display:grid; gap:14px; grid-template-columns:repeat(12,1fr); margin-top:16px}
     .card{
       background: var(--card);
@@ -89,20 +119,38 @@
       box-shadow:var(--shadow);
       padding:18px;
     }
-    .card h3{margin:0 0 8px}
+    .card h3{margin:0 0 8px; letter-spacing:-.01em}
     .card p{margin:0; color:var(--muted)}
     .span4{grid-column:span 4}
     .span6{grid-column:span 6}
+    .span8{grid-column:span 8}
     .span12{grid-column:span 12}
 
+    .pillRow{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .pill{
+      font-size:.92rem;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.50);
+      color: rgba(27,26,24,.88);
+    }
+
+    /* SECTIONS */
     .section{margin-top:26px}
-    .titleRow{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; margin-bottom:12px}
-    .titleRow h2{margin:0}
+    .titleRow{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:16px; margin-bottom:12px;
+    }
+    .titleRow h2{margin:0; letter-spacing:-.02em}
     .titleRow span{color:var(--muted)}
+
+    .twoCol{display:grid; gap:14px; grid-template-columns:1.2fr .8fr}
+
     .list{display:grid; gap:10px; margin:0; padding:0; list-style:none}
     .item{
       border:1px solid var(--line);
-      background:rgba(243,239,230,.04);
+      background: rgba(255,255,255,.55);
       border-radius:16px;
       padding:14px;
       display:flex; gap:12px; align-items:flex-start;
@@ -111,62 +159,77 @@
       width:10px; height:10px; border-radius:50%;
       margin-top:7px; flex:0 0 auto;
       background: linear-gradient(135deg, var(--gold), var(--wine));
-      box-shadow: 0 6px 18px rgba(0,0,0,.35);
+      box-shadow: 0 6px 16px rgba(27,26,24,.12);
     }
     .item b{display:block}
     .item small{color:var(--muted)}
-    .twoCol{display:grid; gap:14px; grid-template-columns:1.2fr .8fr}
 
-    .contacts a{color:var(--text); text-decoration:none; border-bottom:1px dotted rgba(243,239,230,.35)}
-    .contacts a:hover{border-bottom-color:rgba(243,239,230,.75)}
+    /* Contacts */
+    .contacts a{
+      text-decoration:none;
+      border-bottom:1px dotted rgba(27,26,24,.35);
+    }
+    .contacts a:hover{border-bottom-color: rgba(27,26,24,.75)}
+
+    .highlight{
+      border:1px solid rgba(123,31,43,.25);
+      background: linear-gradient(180deg, rgba(123,31,43,.08), rgba(176,138,46,.08));
+    }
+
+    /* Footer */
     .footer{
-      margin-top:30px; padding-top:18px;
+      margin-top:30px;
+      padding-top:18px;
       border-top:1px solid var(--line);
       color:var(--muted);
-      display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between;
+      display:flex; gap:10px; flex-wrap:wrap;
+      align-items:center; justify-content:space-between;
     }
 
     @media (max-width:900px){
       .menu{display:none}
-      .span4,.span6{grid-column:span 12}
+      .span4,.span6,.span8{grid-column:span 12}
       .twoCol{grid-template-columns:1fr}
     }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <div class="nav">
       <a class="brand" href="#top" aria-label="Giriamo Tango">
         <div class="logo">
-          <!-- CAMBIA ESTO cuando sepas el nombre real del archivo -->
-          <img src="assets/logo.png" alt="Logo Giriamo Tango"
-               onerror="this.remove(); this.parentElement.textContent='GT'; this.parentElement.style.fontWeight='900'; this.parentElement.style.color='rgba(243,239,230,.92)';" />
+          <img src="logotipo.jpeg" alt="Logo Giriamo Tango"
+               onerror="this.remove(); this.parentElement.textContent='GT'; this.parentElement.style.fontWeight='900'; this.parentElement.style.color='rgba(27,26,24,.9)';" />
         </div>
         <div>
           <b>Giriamo Tango</b>
           <small>Scuola di Tango Argentino</small>
         </div>
       </a>
+
       <div class="menu">
         <a href="#corsi">Corsi</a>
         <a href="#privati">Lezioni</a>
         <a href="#workshop">Workshop</a>
         <a href="#contatti">Contatti</a>
       </div>
+
       <a class="cta" href="#contatti">Info & iscrizioni</a>
     </div>
 
     <main id="top">
       <section class="hero">
         <div class="kicker">Italia • Europa • Tango argentino</div>
-        <h1>Eleganza, musicalità e connessione.</h1>
+        <h1>Un tango elegante, chiaro e autentico.</h1>
         <p class="lead">
           Giriamo Tango è una scuola di tango argentino guidata da insegnanti argentini con oltre 25 anni nel tango.
           Proponiamo corsi settimanali, lezioni private e workshop con maestri internazionali in diverse località.
         </p>
+
         <div class="actions">
           <a class="btn" href="#corsi">Vedi corsi</a>
-          <a class="btn secondary" href="#contatti">Contattaci</a>
+          <a class="btn secondary" href="#contatti">Scrivici</a>
         </div>
 
         <div class="grid">
@@ -183,6 +246,13 @@
             <p>Stage intensivi e incontri speciali con ospiti internazionali.</p>
           </div>
         </div>
+
+        <div class="pillRow">
+          <span class="pill">Approccio chiaro</span>
+          <span class="pill">Vintage & elegante</span>
+          <span class="pill">Per tutti i livelli</span>
+          <span class="pill">Community accogliente</span>
+        </div>
       </section>
 
       <section class="section" id="corsi">
@@ -190,17 +260,42 @@
           <h2>Corsi</h2>
           <span>Scrivici per calendario aggiornato</span>
         </div>
+
         <div class="twoCol">
           <div class="card">
             <ul class="list">
-              <li class="item"><span class="dot"></span><div><b>Principianti</b><small>Fondamenti, camminata, abbraccio e primi elementi in coppia.</small></div></li>
-              <li class="item"><span class="dot"></span><div><b>Intermedi</b><small>Musicalità, cambi di direzione, dinamiche e combinazioni.</small></div></li>
-              <li class="item"><span class="dot"></span><div><b>Avanzati</b><small>Improvvisazione, interpretazione e sviluppo del proprio stile.</small></div></li>
+              <li class="item">
+                <span class="dot"></span>
+                <div>
+                  <b>Principianti</b>
+                  <small>Fondamenti, camminata, abbraccio e primi elementi in coppia.</small>
+                </div>
+              </li>
+              <li class="item">
+                <span class="dot"></span>
+                <div>
+                  <b>Intermedi</b>
+                  <small>Musicalità, cambi di direzione, dinamiche e combinazioni.</small>
+                </div>
+              </li>
+              <li class="item">
+                <span class="dot"></span>
+                <div>
+                  <b>Avanzati</b>
+                  <small>Improvvisazione, interpretazione e sviluppo del proprio stile.</small>
+                </div>
+              </li>
             </ul>
           </div>
+
           <div class="card">
             <h3>Iscrizione</h3>
             <p>Dicci la tua città e il tuo livello: ti indichiamo il corso o l’evento più vicino.</p>
+            <div class="pillRow" style="margin-top:12px">
+              <span class="pill">Individuale</span>
+              <span class="pill">Coppia</span>
+              <span class="pill">Gruppo</span>
+            </div>
           </div>
         </div>
       </section>
@@ -210,6 +305,7 @@
           <h2>Lezioni private</h2>
           <span>Online o in presenza</span>
         </div>
+
         <div class="grid">
           <div class="card span12">
             <h3>Obiettivi concreti</h3>
@@ -224,14 +320,18 @@
       <section class="section" id="workshop">
         <div class="titleRow">
           <h2>Workshop</h2>
-          <span>Stage & seminari</span>
+          <span>Ospiti internazionali</span>
         </div>
+
         <div class="grid">
-          <div class="card span12">
-            <h3>Temi e ospiti</h3>
+          <div class="card span12 highlight">
+            <h3>Workshop con Jonatan Aguero</h3>
             <p>
-              Organizziamo workshop tematici (milonga, vals, musicalità, tecnica e improvvisazione)
-              e seminari con maestri internazionali. Richiedi le prossime date.
+              Un incontro speciale dedicato a tecnica, musicalità e qualità dell’abbraccio, con focus su
+              strumenti pratici per migliorare l’improvvisazione e la comunicazione in coppia.
+            </p>
+            <p style="margin-top:10px; color:rgba(27,26,24,.78)">
+              <b>Date / città:</b> da definire — contattaci per ricevere il programma e il calendario aggiornato.
             </p>
           </div>
         </div>
@@ -242,6 +342,7 @@
           <h2>Contatti</h2>
           <span>Info, calendario e iscrizioni</span>
         </div>
+
         <div class="grid">
           <div class="card span6 contacts">
             <h3>Scrivici</h3>
@@ -252,9 +353,11 @@
               <b>Facebook:</b> <a href="https://www.facebook.com/search/top?q=Giriamo%20Tango">Giriamo Tango</a>
             </p>
           </div>
+
           <div class="card span6">
             <h3>Lingue</h3>
             <p>Italiano / Español / English</p>
+
             <h3 style="margin-top:14px">Dove siamo</h3>
             <p>Attivi in diverse località in Italia ed Europa. Contattaci e ti aggiorniamo.</p>
           </div>
@@ -263,7 +366,7 @@
 
       <div class="footer">
         <span>© <span id="y"></span> Giriamo Tango</span>
-        <span>Elegante • Vintage • Tango</span>
+        <span>Stile vintage • colori chiari • eleganza</span>
       </div>
     </main>
   </div>
